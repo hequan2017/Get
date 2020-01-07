@@ -8,13 +8,11 @@ import (
 func main() {
 	r := get.Default()
 	r.GET("/", func(c *get.Context) {
-		c.String(http.StatusOK, "Hello getktutu\n")
+		c.String(http.StatusOK, "Hello get \n")
 	})
-	// index out of range for testing Recovery()
-	r.GET("/panic", func(c *get.Context) {
-		names := []string{"getktutu"}
-		c.String(http.StatusOK, names[100])
+	r.GET("/get", func(c *get.Context) {
+		c.String(http.StatusOK, "get")
 	})
 
-	_ = r.Run(":9999")
+	_ = r.Run(":80")
 }
