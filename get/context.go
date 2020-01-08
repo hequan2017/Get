@@ -92,10 +92,10 @@ func (c *Context) Data(code int, data []byte) {
 
 // HTML template render
 // refer https://golang.org/pkg/html/template/
-func (c *Context) HTML(code int, name string, data interface{}) {
-	c.Writer.WriteHeader(code)
-	c.Writer.Header().Set("Content-Type", "text/html")
-	if err := c.engine.htmlTemplates.ExecuteTemplate(c.Writer, name, data); err != nil {
-		c.Fail(500, err.Error())
-	}
-}
+//func (c *Context) HTML(code int, name string, data interface{}) {
+//	c.Writer.WriteHeader(code)
+//	c.Writer.Header().Set("Content-Type", "text/html")
+//	if err := c.engine.htmlTemplates.ExecuteTemplate(c.Writer, name, data); err != nil {
+//		c.Fail(500, err.Error())
+//	}
+//}

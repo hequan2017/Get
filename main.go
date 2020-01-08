@@ -7,9 +7,11 @@ import (
 
 func main() {
 	r := get.Default()
+
 	r.GET("/", func(c *get.Context) {
 		c.String(http.StatusOK, "Hello get \n")
 	})
+
 	r.GET("/get", func(c *get.Context) {
 		data := make(map[string]interface{})
 		data["name"] = "get"
